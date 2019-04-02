@@ -1,0 +1,30 @@
+enum ProductType {
+  blaster,
+  accessory,
+}
+
+enum ProductSeries {
+  Rival
+}
+
+type Product {
+  product_id: String!,
+  name: String!,
+  slug: String!,
+  type: ProductType!,
+  series: ProductSeries!,
+  price: Float,
+  description: String,
+  color: String,
+  capacity: Int,
+  images: [String],
+  firing_mechanism: String,
+  priming: String,
+  loading_mechanism: String,
+  slamfire: Boolean,
+}
+
+type Query {
+  search(type: String): [Product],
+  product(id: String!): Product
+}

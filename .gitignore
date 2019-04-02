@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+config/env_dev.sh
+npm-debug.log
+postgresql_db/
