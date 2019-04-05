@@ -12,6 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "clean": "rm -rf node_modules; rm package-lock.json; npm install",
+    "start": "cd src; nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {

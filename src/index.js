@@ -18,9 +18,10 @@ const start = async () => {
 
   var app = express();
   app.use('/api', graphqlHTTP({
-      schema: schema,
-      graphiql: true,
-      context: { pgClient },
+      schema,
+      context: {
+        pgClient,
+      },
   }));
   app.listen(4000);
   console.log('Running NerfShop API server at localhost:4000/api');
