@@ -26,5 +26,6 @@ type Product {
 
 type Query {
   search(type: String): [Product],
-  product(id: String!): Product
+  product(id: String!): Product,
+  products: [Product],
 }

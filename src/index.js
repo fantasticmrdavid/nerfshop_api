@@ -5,6 +5,8 @@ const path = require('path');
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const { makeExecutableSchema } = require('graphql-tools');
+const cors = require('cors');
+const morgan = require('morgan');
 
 const schemaFile = path.join(__dirname, 'schema.graphql');
 const typeDefs = fs.readFileSync(schemaFile, 'utf8');
@@ -17,6 +19,8 @@ const start = async () => {
   await pgClient.connect();
 
   var app = express();
+  app.use(cors());
+  app.use(morgan('combined'));
   app.use('/api', graphqlHTTP({
       schema,
       context: {

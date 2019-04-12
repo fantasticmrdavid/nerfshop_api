@@ -4,10 +4,12 @@
   "description": "API for NerfShop",
   "main": "index.js",
   "dependencies": {
+    "cors": "2.8.5",
     "express": "4.16.4",
     "express-graphql": "0.7.1",
     "graphql": "14.2.1",
     "graphql-tools": "4.0.4",
+    "morgan": "1.9.1",
     "pg": "7.9.0"
   },
   "devDependencies": {},

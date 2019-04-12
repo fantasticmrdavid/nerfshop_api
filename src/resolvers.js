@@ -6,6 +6,9 @@ exports.resolvers = {
     product: (_, { id }, context) => context.pgClient
       .query(`SELECT * FROM products WHERE product_id = '${id}'`)
       .then(res => res.rows[0]),
+    products: (_, __, context) => context.pgClient
+      .query(`SELECT * FROM products`)
+      .then(res => res.rows),
   },
   Product: {
     images: (product, _, context) => {
